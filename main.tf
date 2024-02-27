@@ -1,4 +1,4 @@
-resource "aws_spot_instance_request" "example" {
+resource "aws_spot_instance_request" "cheap_worker" {
   ami             = "ami-0f3c7d07486cad139"
   instance_type   = "t3.small"
   subnet_id       = "subnet-017ad3134d13bee7a"
