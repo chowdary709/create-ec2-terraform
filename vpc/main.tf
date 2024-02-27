@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_all" {
-  name        = var.security_group_name
+  name        = allow_all
   description = "Allow all inbound/outbound traffic"
   vpc_id      = data.aws_security_group.allow_all.vpc_id
 }
