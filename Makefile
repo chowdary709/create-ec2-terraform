@@ -5,6 +5,6 @@ default:
 	terraform apply -auto-approve -var-file=input.tfvars
 destroy:
 	rm -f .terraform/terraform-tfstate
-	terraform destroy -auto-approve
+	terraform destroy -auto-approve -var-file=input.tfvars
 
 
