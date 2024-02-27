@@ -13,8 +13,6 @@ resource "aws_instance" "example" {
     Name = var.instance_name
   }
 
-  security_groups = [aws_security_group.allow_all.name]
-
   instance_market_options {
     market_type = "spot"
     spot_options {
