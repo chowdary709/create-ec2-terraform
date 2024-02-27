@@ -2,6 +2,6 @@ default:
 	git pull
 #	rm -f .terraform/terraform-tfstate
 	terraform init
-	terraform apply -auto-approve -var-file=input.tfvars
+	terraform apply -auto-approve 
 destroy:
-	terraform destroy -auto-approve -var-file=input.tfvars
+	terraform destroy -auto-approve
