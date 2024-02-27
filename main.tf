@@ -5,12 +5,9 @@ resource "aws_spot_instance_request" "example" {
   key_name        = "artifactory"
   security_groups = ["sg-0b792d7d432d8d378"]
 
-  instance_market_options {
-    market_type = "spot"
-    spot_options {
-      spot_instance_type           = "persistent"  # You can set to "one-time" or "persistent"
-      instance_interruption_behavior = "stop"  # Stop the instance on interruption
-    }
+  spot_options {
+    instance_type           = "persistent"  # You can set to "one-time" or "persistent"
+    instance_interruption_behavior = "stop"  # Stop the instance on interruption
   }
 
   # Optional tags
