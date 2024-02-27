@@ -1,0 +1,24 @@
+---
+- name: Create AWS EC2 spot instance
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create spot instance
+      ec2_instance:
+        instance_type: t3.micro
+        image: ami-0f3c7d07486cad139
+#        key_name: my_keypair
+        region: us-east-1d
+        vpc_subnet_id: subnet-017ad3134d13bee7a
+        group: sg-0b792d7d432d8d378
+        instance_market_options:
+          market_type: spot
+          spot_options:
+            spot_instance_type: persistent
+            instance_interruption_behavior: stop
+        count: 1
+        wait: yes
+      register: ec2
+
+    - debug:
+        var: ec2.instances[0].public_dns_name
