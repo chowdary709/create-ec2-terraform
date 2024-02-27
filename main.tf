@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-east-1"  # Replace with your desired AWS region code
-}
-
 resource "aws_spot_instance_request" "example" {
   ami             = "ami-0f3c7d07486cad139"
   instance_type   = "t3.small"
