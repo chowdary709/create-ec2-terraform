@@ -1,33 +1,24 @@
-resource "aws_security_group" "allow_all" {
-  name        = allow_all
-  description = "Allow all inbound/outbound traffic"
-  vpc_id      = data.aws_security_group.allow_all.vpc_id
+provider "aws" {
+  region = "us-east-1"  # Replace with your desired AWS region code
 }
 
-#resource "aws_instance" "example" {
-#  ami           = var.ami_id
-#  instance_type = var.instance_type
-#  subnet_id     = var.subnet_id
-#
-#  tags = {
-#    Name = var.instance_name
-#  }
-#
-#  instance_market_options {
-#    market_type = "spot"
-#    spot_options {
-#      spot_instance_type           = "persistent"
-#      instance_interruption_behavior = "stop"  # Corrected argument name
-#    }
-#  }
-#}
-#
-## Define a data source to fetch AMI ID
-#data "aws_ami" "centos" {
-#  most_recent = true
-#
-#  filter {
-#    name   = "name"
-#    values = [var.ami_name]
-#  }
-#}
+resource "aws_spot_instance_request" "example" {
+  ami             = "ami-0f3c7d07486cad139"
+  instance_type   = "t3.small"
+  subnet_id       = "subnet-017ad3134d13bee7a"
+  key_name        = "artifactory"
+  security_groups = ["sg-0b792d7d432d8d378"]
+
+  instance_market_options {
+    market_type = "spot"
+    spot_options {
+      spot_instance_type           = "persistent"  # You can set to "one-time" or "persistent"
+      instance_interruption_behavior = "stop"  # Stop the instance on interruption
+    }
+  }
+
+  # Optional tags
+  tags = {
+    Name = "artifactory"
+  }
+}
