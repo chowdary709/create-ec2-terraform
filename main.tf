@@ -6,8 +6,8 @@ resource "aws_spot_instance_request" "example" {
   security_groups = ["sg-0b792d7d432d8d378"]
 
   spot_options {
-    instance_type           = "persistent"  # You can set to "one-time" or "persistent"
-    instance_interruption_behavior = "stop"  # Stop the instance on interruption
+    spot_type            = "persistent"  # Can be "one-time" or "persistent"
+    instance_interruption_behavior = "stop"  # Can be "terminate" or "stop"
   }
 
   # Optional tags
