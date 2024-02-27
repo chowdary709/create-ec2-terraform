@@ -1,3 +1,7 @@
+provider "aws" {
+  region = var.aws_region
+}
+
 resource "aws_security_group" "allow_all" {
   name        = var.security_group_name
   description = "Allow all inbound/outbound traffic"
