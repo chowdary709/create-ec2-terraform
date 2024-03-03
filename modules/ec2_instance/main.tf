@@ -1,5 +1,5 @@
 resource "aws_instance" "instance" {
-  ami                    = var.ami
+  ami                    = data.aws_ami.centos
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   associate_public_ip_address = true
