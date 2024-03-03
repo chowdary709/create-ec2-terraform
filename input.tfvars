@@ -1,8 +1,9 @@
-#ami                    = "ami-0f3c7d07486cad139"
 subnet_id              = "subnet-0233174d26bc6112d"
 vpc_security_group_ids = ["sg-0b792d7d432d8d378"]
 instance_interruption_behavior = "stop"
 spot_instance_type     = "persistent"
+
+#ami                    = "ami-0f3c7d07486cad139"
 
 
 #resource "aws_instance" "instance" {
