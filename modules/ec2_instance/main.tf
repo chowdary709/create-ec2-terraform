@@ -1,15 +1,3 @@
-data "aws_ami" "centos" {
-  most_recent      = true
-  filter {
-    name   = "name"
-    values = ["*Centos-8-DevOps-Practice*"]
-  }
-  filter {
-    name   = "executable-users"
-    values = ["666171310914"]
-  }
-}
-
 resource "aws_instance" "instance" {
   ami                    = data.aws_ami.centos.image_id // Use .id to get the AMI ID
   instance_type          = var.instance_type
