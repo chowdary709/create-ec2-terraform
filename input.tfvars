@@ -4,6 +4,7 @@ vpc_security_group_ids = ["sg-0b792d7d432d8d378"]
 instance_interruption_behavior = "stop"
 spot_instance_type     = "persistent"
 
+
 #resource "aws_instance" "instance" {
 #  ami                    = ami-0f3c7d07486cad139
 #  instance_type          = var.instance_type
