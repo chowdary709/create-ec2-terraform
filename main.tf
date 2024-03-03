@@ -18,11 +18,13 @@
 
 data "aws_ami" "ami" {
   most_recent = true
-  owners      = ["666171310914"]
+
   filter {
     name   = "name"
     values = ["*Centos-8-DevOps-Practice*"]
   }
+
+  owners = ["666171310914"]
 }
 
 module "ec2" {
