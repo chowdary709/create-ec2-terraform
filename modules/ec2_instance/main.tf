@@ -11,7 +11,7 @@ data "aws_ami" "centos" {
 }
 
 resource "aws_instance" "instance" {
-  ami                    = data.aws_ami.centos.id // Use .id to get the AMI ID
+  ami                    = data.aws_ami.centos.image_id // Use .id to get the AMI ID
   instance_type          = var.instance_type
   subnet_id              = var.subnet_id
   associate_public_ip_address = true
