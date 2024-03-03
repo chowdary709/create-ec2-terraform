@@ -1,6 +1,6 @@
 module "ec2" {
   source                         = "./modules/ec2_instance"
-  ami                            = var.ami
+  ami                            = data.aws_ami.ami.image_id
   subnet_id                      = var.subnet_id
   vpc_security_group_ids         = var.vpc_security_group_ids
   instance_interruption_behavior = var.instance_interruption_behavior
