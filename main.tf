@@ -6,5 +6,5 @@ module "ec2" {
   instance_interruption_behavior = var.instance_interruption_behavior
   spot_instance_type             = var.spot_instance_type
   instance_type                  = "t2.micro"
-  instance_tag_name              = "artifactory"
+  instance_tag_name              = "test"
 }
