@@ -21,3 +21,11 @@ resource "aws_instance" "instance" {
     }
   }
 }
+
+resource "aws_route53_record" "instance" {
+  zone_id = "Z08360431XA1BOY4SK2N0"
+  name    = var.route53_record_name
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.instance.private_ip]
+}
