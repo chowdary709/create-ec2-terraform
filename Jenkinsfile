@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     if (params.ACTION == 'apply') {
-                        sh 'make apply'
+                        sh 'make'
                     } else if (params.ACTION == 'destroy') {
                         sh 'make destroy'
                     } else {
