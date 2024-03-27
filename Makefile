@@ -7,4 +7,3 @@ destroy:
 	rm -f .terraform/terraform-tfstate
 	terraform destroy -auto-approve -var-file=input.tfvars
 
-
