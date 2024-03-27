@@ -41,7 +41,7 @@ module "frontend" {
    route53_record_name            = "mysql.roboshop.internal"
  }
 
-module "mysql" {
+module "elk" {
   source                         = "./modules/ec2_instance"
   ami                            = var.ami
   subnet_id                      = var.subnet_id
