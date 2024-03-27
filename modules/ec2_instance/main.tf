@@ -41,7 +41,6 @@ resource "aws_instance" "instance" {
     Name = var.instance_tag_name
   }
 
-#  user_data = file("${path.module}/userdata.sh")
 
   // Spot instance options
   instance_market_options {
