@@ -9,4 +9,4 @@ destroy:
 	terraform destroy -target=module.elk -var-file=input.tfvars
 
 destroy-elk:
-	terraform destroy -target=module.elk -var-file=input.tfvars
+	terraform destroy -auto-approve -target=module.elk -var-file=input.tfvars
