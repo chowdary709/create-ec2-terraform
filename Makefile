@@ -17,7 +17,7 @@ destroy-elk:
 	terraform destroy -auto-approve -target=module.elk -var-file=input.tfvars
 
 destroy-module:
-	terraform destroy -auto-approve -target=module.$(module) -var-file=input.tfvars
+	terraform destroy -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
 
 # make destroy-module module=mysgl
