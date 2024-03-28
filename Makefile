@@ -4,8 +4,12 @@ default:
 	terraform init
 	terraform apply -auto-approve -var-file=input.tfvars
 
-default-module:
+apply-module:
 	terraform apply -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
+
+### make apply-module MODULE=mysql
+
+
 
 destroy:
 	rm -f .terraform/terraform-tfstate
@@ -15,12 +19,5 @@ destroy:
 destroy-module:
 	terraform destroy -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
-
-
-
-
-# make destroy-module module=mysgl
-# make destroy-module MODULE=backend
-# make destroy-module MODULE=mysql
-# make destroy-module MODULE=elk
+### make destroy-module MODULE=mysql
 
