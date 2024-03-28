@@ -6,4 +6,6 @@ default:
 destroy:
 	rm -f .terraform/terraform-tfstate
 	terraform destroy -auto-approve -var-file=input.tfvars
+destroy-elk:
+    terraform destroy -target=module.elk
 
