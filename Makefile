@@ -1,3 +1,5 @@
+################################################apply#################################################################
+
 default:
 	git pull
 	rm -f .terraform/terraform-tfstate
@@ -9,7 +11,7 @@ apply-module:
 
 ### make apply-module MODULE=mysql
 
-
+################################################destroy#################################################################
 
 destroy:
 	rm -f .terraform/terraform-tfstate
