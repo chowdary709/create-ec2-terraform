@@ -39,11 +39,6 @@ resource "aws_instance" "instance" {
   tags = {
     Name = var.instance_tag_name
   }
-}
-
-output "public_ip_address" {
-  value = aws_instance.instance.public_ip
-}
 
   // Spot instance options
   instance_market_options {
@@ -56,8 +51,12 @@ output "public_ip_address" {
   }
 }
 
+output "public_ip_address" {
+  value = aws_instance.instance.public_ip
+}
+
 resource "aws_route53_record" "instance" {
-  zone_id = "Z08360431XA1BOY4SK2N0"
+  zone_id = "Z08360431XA1BOY4SK2N0" // Replace with your hosted zone ID
   name    = var.route53_record_name
   type    = "A"
   ttl     = "300"
