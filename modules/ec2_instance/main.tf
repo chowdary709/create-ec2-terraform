@@ -29,7 +29,6 @@
 #  ttl     = "300"
 #  records = [aws_instance.instance.private_ip]
 #}
-#
 resource "aws_instance" "instance" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -41,6 +40,7 @@ resource "aws_instance" "instance" {
   tags = {
     Name = var.instance_tag_name
   }
+
 
   // Spot instance options
   instance_market_options {
@@ -59,8 +59,4 @@ resource "aws_route53_record" "instance" {
   type    = "A"
   ttl     = "300"
   records = [aws_instance.instance.private_ip]
-}
-
-output "public_ip" {
-  value = aws_instance.instance.public_ip
 }
