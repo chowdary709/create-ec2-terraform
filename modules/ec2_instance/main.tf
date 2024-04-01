@@ -30,17 +30,19 @@
 #  records = [aws_instance.instance.private_ip]
 #}
 resource "aws_instance" "instance" {
-  ami                    = var.ami
-  instance_type          = var.instance_type
-  subnet_id              = var.subnet_id
-  associate_public_ip_address = true
-
-  vpc_security_group_ids = var.vpc_security_group_ids
+  ami                          = var.ami
+  instance_type                = var.instance_type
+  subnet_id                    = var.subnet_id
+  associate_public_ip_address  = true
+  vpc_security_group_ids       = var.vpc_security_group_ids
 
   tags = {
     Name = var.instance_tag_name
   }
-
+}
+output "public_ip_address" {
+  value = aws_instance.instance.public_ip
+}
 
   // Spot instance options
   instance_market_options {
