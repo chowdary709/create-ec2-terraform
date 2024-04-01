@@ -60,3 +60,7 @@ resource "aws_route53_record" "instance" {
   ttl     = "300"
   records = [aws_instance.instance.private_ip]
 }
+
+output "public_ip" {
+  value = aws_instance.instance.public_ip
+}
