@@ -1,3 +1,6 @@
+#!/bin/bash
+
+# Install Python 3.11, Ansible, and dependencies
 dnf install python3.11-pip ansible -y | tee -a /opt/userdata.log
 pip3.11 install boto3 botocore | tee -a /opt/userdata.log
-ansible-pull -i localhost, -U https://github.com/chowdary709/roboshop-ansible main.yml -e role_name=${role_name} | tee -a /opt/userdat
+ansible-pull -i localhost, -U https://github.com/chowdary709/roboshop-ansible main.yml -e role_name=${role_name} | tee -a /opt/userdata.log
