@@ -1,11 +1,9 @@
 #resource "aws_instance" "instance" {
-#  ami                    = var.ami
-#  instance_type          = var.instance_type
-#  subnet_id              = var.subnet_id
-#  associate_public_ip_address = true
-#
-#
-#  vpc_security_group_ids = var.vpc_security_group_ids
+#  ami                          = var.ami
+#  instance_type                = var.instance_type
+#  subnet_id                    = var.subnet_id
+#  associate_public_ip_address  = true
+#  vpc_security_group_ids       = var.vpc_security_group_ids
 #
 #  tags = {
 #    Name = var.instance_tag_name
@@ -22,19 +20,27 @@
 #  }
 #}
 #
+#output "public_ip_address" {
+#  value = aws_instance.instance.public_ip
+#}
+#
 #resource "aws_route53_record" "instance" {
-#  zone_id = "Z08360431XA1BOY4SK2N0"
+#  zone_id = "Z08360431XA1BOY4SK2N0" // Replace with your hosted zone ID
 #  name    = var.route53_record_name
 #  type    = "A"
 #  ttl     = "300"
 #  records = [aws_instance.instance.private_ip]
 #}
+
 resource "aws_instance" "instance" {
   ami                          = var.ami
   instance_type                = var.instance_type
   subnet_id                    = var.subnet_id
   associate_public_ip_address  = true
   vpc_security_group_ids       = var.vpc_security_group_ids
+  user_data                    = base64encode(templatefile("${path.module}/userdata.sh", {
+    role_name = var.component
+  }))
 
   tags = {
     Name = var.instance_tag_name
