@@ -1,0 +1,5 @@
+make destroy-module MODULE=
+
+make apply-module MODULE=
+
+make apply-module MODULE=frontend ; make apply-module MODULE=mongodb ; make apply-module MODULE= catalogue
