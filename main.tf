@@ -14,7 +14,6 @@ module "redis" {
   instance_type                  = "t2.micro"
   instance_tag_name              = "redis"
   route53_record_name            = "redis.roboshop.internal"
-  component                      = "frontend"
 }
 
 module "frontend" {
@@ -27,7 +26,6 @@ module "frontend" {
   instance_type                  = "t2.micro"
   instance_tag_name              = "frontend"
   route53_record_name            = "frontend.roboshop.internal"
-  component                      = ""
 }
 
 module "mongodb" {
@@ -40,7 +38,6 @@ module "mongodb" {
   instance_type                  = "t2.micro"
   instance_tag_name              = "mongodb"
   route53_record_name            = "mongodb.roboshop.internal"
-  component                      = ""
 }
 
 module "catalogue" {
@@ -53,7 +50,6 @@ module "catalogue" {
   instance_type                  = "t2.micro"
   instance_tag_name              = "catalogue"
   route53_record_name            = "catalogue.roboshop.internal"
-  component                      = ""
 }
 
 
@@ -67,7 +63,6 @@ module "backend" {
  instance_type                  = "t2.micro"
  instance_tag_name              = "backend"
  route53_record_name            = "backend.roboshop.internal"
-  component                     = ""
 }
 
 module "mysql" {
@@ -80,7 +75,6 @@ module "mysql" {
  instance_type                  = "t2.micro"
  instance_tag_name              = "mysql"
  route53_record_name            = "mysql.roboshop.internal"
-  component                     = ""
 }
 
 module "elk" {
@@ -93,6 +87,5 @@ module "elk" {
   instance_type                  = "r5.large"
   instance_tag_name              = "elk"
   route53_record_name            = "elk.roboshop.internal"
-  component                      = ""
 }
 
