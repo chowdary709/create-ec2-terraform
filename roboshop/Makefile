@@ -1,12 +1,13 @@
 ################################################ apply #################################################################
 default:
 	git pull
-	rm -f .terraform
+	rm -f .terraform/terraform-tfstate
 	terraform init -backend-config=state.tfvars
 	terraform apply -auto-approve -var-file=input.tfvars
 
 apply-module:
 	git pull
+	rm -f .terraform/terraform-tfstate
 	terraform init -backend-config=state.tfvars
 	terraform apply -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
