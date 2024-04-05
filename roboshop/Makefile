@@ -1,14 +1,13 @@
 ################################################ apply #################################################################
-
 default:
 	git pull
-	rm -f .terraform/terraform-tfstate
-	terraform init
+	rm -f .terraform
+	terraform init -backend-config=state.tfvars
 	terraform apply -auto-approve -var-file=input.tfvars
 
 apply-module:
 	git pull
-	terraform init
+	terraform init -backend-config=state.tfvars
 	terraform apply -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
 ### make apply-module MODULE=mysql
@@ -17,10 +16,12 @@ apply-module:
 
 destroy:
 	rm -f .terraform/terraform-tfstate
+	terraform init -backend-config=state.tfvars
 	terraform destroy -auto-approve -var-file=input.tfvars
-	terraform destroy -target=module.elk -var-file=input.tfvars
 
 destroy-module:
+	rm -f .terraform/terraform-tfstate
+	terraform init -backend-config=state.tfvars
 	terraform destroy -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
 ### make destroy-module MODULE=mysql
