@@ -1,5 +1,5 @@
 module "frontend" {
-  source                         = "./modules/ec2_instance"
+  source                         = "modulesc2_instance"
   ami                            = var.ami
   subnet_id                      = var.subnet_id
   vpc_security_group_ids         = var.vpc_security_group_ids
@@ -11,7 +11,7 @@ module "frontend" {
 }
 
 module "backend" {
- source                         = "./modules/ec2_instance"
+ source                         = "modulesc2_instance"
  ami                            = var.ami
  subnet_id                      = var.subnet_id
  vpc_security_group_ids         = var.vpc_security_group_ids
@@ -23,7 +23,7 @@ module "backend" {
 }
 
 module "mysql" {
- source                         = "./modules/ec2_instance"
+ source                         = "modulesc2_instance"
  ami                            = var.ami
  subnet_id                      = var.subnet_id
  vpc_security_group_ids         = var.vpc_security_group_ids
@@ -35,7 +35,7 @@ module "mysql" {
 }
 
 module "elk" {
-  source                         = "./modules/ec2_instance"
+  source                         = "modulesc2_instance"
   ami                            = var.ami
   subnet_id                      = var.subnet_id
   vpc_security_group_ids         = var.vpc_security_group_ids
