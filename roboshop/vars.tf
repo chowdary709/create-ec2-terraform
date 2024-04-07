@@ -12,7 +12,7 @@ variable "us-east-1b" {
 }
 
 variable "us-east-1c" {
-  default = "subnet-0233174d26bc6112d"
+  default = subnet-0233174d26bc6112d
 }
 
 variable "us-east-1d" {
