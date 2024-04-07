@@ -9,4 +9,3 @@ module "elk" {
   instance_tag_name              = "elk"
   route53_record_name            = "elk.roboshop.internal"
 }
-
