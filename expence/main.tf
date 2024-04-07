@@ -18,7 +18,7 @@ module "mysql" {
   vpc_security_group_ids         = var.us-east-1b
  instance_interruption_behavior = var.instance_interruption_behavior
  spot_instance_type             = var.spot_instance_type
- instance_type                  = "t2.micro"
+ instance_type                  = "t2.small"
  instance_tag_name              = "mysql"
  route53_record_name            = "mysql.roboshop.internal"
 }
@@ -42,7 +42,7 @@ module "elk" {
    vpc_security_group_ids         = var.us-east-1c
   instance_interruption_behavior = var.instance_interruption_behavior
   spot_instance_type             = var.spot_instance_type
-  instance_type                  = "r5.large"
+  instance_type                  = "t3.medium"
   instance_tag_name              = "elk"
   route53_record_name            = "elk.roboshop.internal"
 }
