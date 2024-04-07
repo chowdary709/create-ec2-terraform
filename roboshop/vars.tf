@@ -1,5 +1,5 @@
 variable "ami" {}
-variable "subnet_id" {}
+variable "vpc_security_group_ids" {}
 variable "instance_interruption_behavior" {}
 variable "spot_instance_type" {}
 
@@ -12,7 +12,7 @@ variable "us-east-1b" {
 }
 
 variable "us-east-1c" {
-  default = subnet-0233174d26bc6112d
+  default = "subnet-0233174d26bc6112d"
 }
 
 variable "us-east-1d" {
