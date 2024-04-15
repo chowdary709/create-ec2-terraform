@@ -17,12 +17,12 @@ apply-module:
 
 destroy:
 	rm -f .terraform/terraform-tfstate
-	terraform init -backend-config=state.tfvars
+	terraform init -backend-config=state.tf
 	terraform destroy -auto-approve -var-file=input.tfvars
 
 destroy-module:
 	rm -f .terraform/terraform-tfstate
-	terraform init -backend-config=state.tfvars
+	terraform init -backend-config=state.tf
 	terraform destroy -auto-approve -target=module.$(MODULE) -var-file=input.tfvars
 
 ### make destroy-module MODULE=mysql
