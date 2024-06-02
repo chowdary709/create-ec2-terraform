@@ -7,7 +7,7 @@ module "web" {
   spot_instance_type             = var.spot_instance_type
   instance_type                  = "t2.micro"
   instance_tag_name              = "web"
-  route53_record_name            = "web.roboshop.internal"
+  route53_record_name            = "web.chowdary.cloud"
 }
 
 # module "mongodb" {
