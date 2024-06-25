@@ -1,14 +1,14 @@
-# module "jenkins" {
-#   source                         = "./modules/ec2_instance"
-#   ami                            = data.aws_ami.ami.id
-#   subnet_id                      = var.us-east-1c
-#   vpc_security_group_ids         = data.aws_security_group.sg.id
-#   instance_interruption_behavior = var.instance_interruption_behavior
-#   spot_instance_type             = var.spot_instance_type
-#   instance_type                  = "t3.small"
-#   instance_tag_name              = "jenkins"
-#   route53_record_name            = "jenkins.chowdary.cloud"
-# }
+module "jenkins" {
+  source                         = "./modules/ec2_instance"
+  ami                            = data.aws_ami.ami.id
+  subnet_id                      = var.us-east-1c
+  vpc_security_group_ids         = data.aws_security_group.sg.id
+  instance_interruption_behavior = var.instance_interruption_behavior
+  spot_instance_type             = var.spot_instance_type
+  instance_type                  = "t3.small"
+  instance_tag_name              = "jenkins"
+  route53_record_name            = "jenkins.chowdary.cloud"
+}
 
 
 # module "elk" {
@@ -35,9 +35,9 @@
 #   route53_record_name            = "prometheus.chowdary.cloud"
 # }
 
-output "sg" {
-  value = data.aws_security_group.sg.id
-}
-output "ami" {
-  value = data.aws_ami.ami.id
-}
+# output "sg" {
+#   value = data.aws_security_group.sg.id
+# }
+# output "ami" {
+#   value = data.aws_ami.ami.id
+# }
