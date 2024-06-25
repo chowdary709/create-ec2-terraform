@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
   subnet_id                    = var.subnet_id
   associate_public_ip_address  = true
   vpc_security_group_ids       = var.vpc_security_group_ids
-  
+
   tags = {
     Name = var.instance_tag_name
   }
@@ -29,6 +29,6 @@ resource "aws_route53_record" "instance" {
   name    = var.route53_record_name
   type    = "A"
   ttl     = "300"
-  records = [aws_instance.instance.private_ip]
+  records = [aws_instance.instance.public_dns]
 }
 
