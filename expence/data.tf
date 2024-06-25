@@ -3,3 +3,10 @@ data "aws_ami" "ami" {
   name_regex  = "Centos-8-DevOps-Practice"
   owners      = ["973714476881"]
 }
+data "aws_security_group" "sg" {
+  filter {
+    name   = "tag:Name"
+    values = ["allow_all"]
+  }
+}
+
