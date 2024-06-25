@@ -2,7 +2,7 @@ module "jenkins" {
   source                         = "./modules/ec2_instance"
   ami                            = data.aws_ami.ami.id
   subnet_id                      = var.us-east-1c
-  vpc_security_group_ids         = data.aws_security_group.sg.id
+  vpc_security_group_ids         = [data.aws_security_group.sg.id]
   instance_interruption_behavior = var.instance_interruption_behavior
   spot_instance_type             = var.spot_instance_type
   instance_type                  = "t3.small"
