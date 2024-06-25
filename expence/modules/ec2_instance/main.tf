@@ -5,7 +5,6 @@ resource "aws_instance" "instance" {
   associate_public_ip_address  = true
   vpc_security_group_ids       = var.vpc_security_group_ids
   
-
   tags = {
     Name = var.instance_tag_name
   }

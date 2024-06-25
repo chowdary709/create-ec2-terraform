@@ -5,7 +5,7 @@ module "jenkins" {
   vpc_security_group_ids         = [data.aws_security_group.sg.id]
   instance_interruption_behavior = var.instance_interruption_behavior
   spot_instance_type             = var.spot_instance_type
-  instance_type                  = "t3.small"
+  instance_type                  = "t3.medium"
   instance_tag_name              = "jenkins"
   route53_record_name            = "jenkins.chowdary.cloud"
 }
