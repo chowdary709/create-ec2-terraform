@@ -29,6 +29,6 @@ resource "aws_route53_record" "instance" {
   name    = var.route53_record_name
   type    = "A"
   ttl     = "300"
-  records = [aws_instance.instance.public_dns]
+  records = [aws_instance.instance.public_ip]
 }
 
