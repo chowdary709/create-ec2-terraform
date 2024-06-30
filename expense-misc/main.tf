@@ -1,6 +1,3 @@
-terraform {
-  backend "s3" {}
-}
 resource "aws_route53_record" "workstation" {
   name    = "workstation.chowdary.cloud"
   type    = "A"
