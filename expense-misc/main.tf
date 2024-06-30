@@ -1,4 +1,4 @@
-resource "aws_route53_record" "jenkins" {
+resource "aws_route53_record" "workstation" {
   name    = "workstation.chowdary.cloud"
   type    = "A"
   zone_id = "Z0013695SMHQDK42GJB1"
