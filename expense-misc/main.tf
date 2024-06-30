@@ -7,7 +7,7 @@ resource "aws_route53_record" "workstation" {
 }
 
 output "Workstation_instance_id" {
-  value = data.aws_instances.Workstation.ids[0]
+  value = data.aws_instances.Workstation.public_ips
 }
 
 # resource "aws_route53_record" "jenkins" {
