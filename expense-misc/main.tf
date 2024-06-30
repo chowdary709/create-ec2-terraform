@@ -6,6 +6,10 @@ resource "aws_route53_record" "workstation" {
   ttl     = 10
 }
 
+output "Workstation_instance_id" {
+  value = data.aws_instances.Workstation.ids[0]
+}
+
 # resource "aws_route53_record" "jenkins" {
 #   name    = "jenkins.chowdary.cloud"
 #   type    = "A"

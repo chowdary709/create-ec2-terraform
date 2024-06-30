@@ -7,7 +7,3 @@ data "aws_instances" "Workstation" {
     values = ["Workstation"]
   }
 }
-
-output "Workstation_instance_id" {
-  value = data.aws_instances.Workstation.id
-}
