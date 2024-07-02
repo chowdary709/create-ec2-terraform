@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Restart Jenkins') {
             steps {
-                sh 'sudo systemctl restart jenkins'
+                sh 'systemctl list-units --type=service | grep jenkins'
             }
         }
     }
