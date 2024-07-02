@@ -8,10 +8,9 @@ pipeline {
                 }
             }
         }
-        stage('Restart jenkins') {
+        stage('Restart Jenkins') {
             steps {
-                // Your build steps here
-                sh 'sudo systemctl restart jenkins.service'
+                sh 'sudo systemctl restart jenkins'
             }
         }
     }
