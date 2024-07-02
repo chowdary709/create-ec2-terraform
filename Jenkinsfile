@@ -1,16 +1,10 @@
 pipeline {
     agent any
-
-    environment {
-        JENKINS_JAVA_OPTIONS = '-Duser.timezone=Asia/Kolkata'
-    }
-
     stages {
         stage('Set Timezone') {
             steps {
                 script {
-                    // Echo to confirm the timezone setting
-                    sh 'echo "Setting timezone to Asia/Kolkata"'
+                    sh 'JENKINS_JAVA_OPTIONS="-Duser.timezone=Asia/Kolkata"'
                 }
             }
         }
