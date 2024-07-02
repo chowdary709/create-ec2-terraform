@@ -10,12 +10,11 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Restart jenkins') {
             steps {
                 // Your build steps here
-                sh 'echo "Building..."'
+                sh 'sudo systemctl restart jenkins'
             }
         }
-        // Add more stages as needed//
     }
 }
