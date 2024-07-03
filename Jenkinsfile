@@ -15,13 +15,3 @@
 //         }
 //     }
 // }
-pipeline {
-    agent any
-    stages {
-        stage('Restart Jenkins') {
-            steps {
-                sh 'sudo systemctl restart jenkins'
-            }
-        }
-    }
-}
