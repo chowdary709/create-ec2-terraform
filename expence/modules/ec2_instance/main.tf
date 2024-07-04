@@ -20,9 +20,9 @@ resource "aws_instance" "instance" {
   }
 }
 
-output "public_ip_address" {
-  value = aws_instance.instance.public_ip
-}
+# output "public_ip_address" {
+#   value = aws_instance.instance.public_ip
+# }
 
 resource "aws_route53_record" "instance" {
   zone_id = "Z0013695SMHQDK42GJB1" // Replace with your hosted zone ID

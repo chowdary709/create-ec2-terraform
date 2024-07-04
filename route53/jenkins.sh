@@ -2,7 +2,7 @@
 
 # Variables
 ZONE_ID="Z0013695SMHQDK42GJB1"
-NAME="artifactory.chowdary.cloud"
+NAME="jenkins.chowdary.cloud"
 TYPE="A"
 TTL=10
 RECORDS=$1
