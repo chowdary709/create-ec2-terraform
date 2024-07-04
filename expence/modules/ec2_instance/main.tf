@@ -28,7 +28,7 @@ resource "aws_route53_record" "instance" {
   zone_id = "Z0013695SMHQDK42GJB1" // Replace with your hosted zone ID
   name    = var.route53_record_name
   type    = "A"
-  ttl     = "300"
+  ttl     = "10"
   records = [aws_instance.instance.public_ip]
 }
 
